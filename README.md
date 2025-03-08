@@ -5,11 +5,7 @@ The Linear Assignment Problem is a combinatorial optimization problem, where you
 
 $$
 \begin{align}
-
 \alpha^* = \underset{\alpha \in \mathcal{A}}{\arg\min} \sum_{i=1}^n c_{i,\alpha(i)}
-
-
-
 \end{align}
 $$
 
