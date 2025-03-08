@@ -6,14 +6,14 @@ The Linear Assignment Problem is a combinatorial optimization problem, where you
 $$
 \begin{align}
 
-A^* = \underset{A \in \mathcal{A}}{\arg\min} \sum_{i=1}^n c_{i,A(i)}
+\alpha^* = \underset{\alpha \in \mathcal{A}}{\arg\min} \sum_{i=1}^n c_{i,\alpha(i)}
 
 
 
 \end{align}
 $$
 
-where $A^* \in \mathcal{A}$ is the optimal assignment, where $A(i)_k$ represent the index of some task in $T$ assigned to worker $w_i$, where $k$ is the index of the permutation $A_k \in \mathcal{A}$. It's also common to formulate it in terms of maximization, where let's say every worker produce a gain instead of a cost.
+where $\alpha^* \in \mathcal{A}$ is the optimal assignment, where $\alpha(i)_k$ represent the index of some task in $T$ assigned to worker $w_i$, where $k$ is the index of the permutation $\alpha_k \in \mathcal{A}$. It's also common to formulate it in terms of maximization, where let's say every worker produce a gain instead of a cost.
 
 The motivation behind LAP is to find an algorithm that is significantly more efficient than $\mathcal{O}(n!)$, which would be the brute-force approach of testing every possible permutation of assignments.
 
