@@ -1,0 +1,27 @@
+name: default-checks
+
+on:
+  pull_request:
+
+jobs:
+  default-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+            python-version: '3.10'
+            
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-dev
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r ./requirements.txt
+      - name: Tests
+        run: |
+          cd tests && pytest
+      
