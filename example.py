@@ -1,3 +1,4 @@
+import time
 from linear_assignment import LinearAssignmentMunkres
 import torch
 
@@ -11,5 +12,3 @@ cost_matrx = torch.Tensor([[80, 23, 80, 39, 55, 2],
 lap = LinearAssignmentMunkres(cost_matrx, maximize=False)
 lap.fit()
 indices, sum = lap.transform()
-
-print(sum)
