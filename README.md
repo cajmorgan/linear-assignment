@@ -36,7 +36,32 @@ $$
 
 following the above definitions. 
 
-Though in practice, the Munkres Algorithm is very slow for larger cost matrices and not recommended to use.
+In practice, the Munkres Algorithm is very slow compared to newer versions of the LAP algorithm, such as the one implemented in SciPy. Thus, it's only of theoretical interest and shouldn't be used in practice. 
+
+### Usage
+
+First 
+```cmd
+pip install -r requirements.txt
+```
+
+Then 
+```python
+from linear_assignment import LinearAssignmentMunkres
+import torch
+
+cost_matrix = torch.Tensor([[80, 23, 80, 39, 55, 2],
+                           [19, 59, 36, 98, 19, 94],
+                           [82, 38, 48, 95, 65, 25],
+                           [9, 91, 83, 8, 48, 64],
+                           [73, 22, 23, 86, 33, 42],
+                           [2, 20, 9, 81, 94, 16]])
+
+lap = LinearAssignmentMunkres(cost_matrix, maximize=False)
+lap.fit()
+indices, sum = lap.transform()
+```
+Where the indices consists of the assignments of row $i$ (worker) and col $j$ (task). The sum is the minimized cost.  
 
 ## Future of this project
 I may implement more efficient versions of this algorithm, starting with Jonker and Volgenant. 
