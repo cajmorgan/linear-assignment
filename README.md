@@ -1,19 +1,19 @@
 
 # Linear Assignment Problem (LAP)
 
-The Linear Assignment Problem is a combinatorial optimization problem, where you want to find an optimial assignment between $n$ workers and $n$ tasks. Let $\{w_1, ..., w_n \}$ be the set of workers and let $\{ t_1, ..., t_n \}$ be the set of tasks. Let $c_{i,j}$ represent the cost of assigning $w_i \to t_j$ and let $\mathcal{\Alpha}$ be the set of sets of $n!$ permutations of $\{1, 2, ..., n\}$, for instance $\mathcal{\Alpha} = \{(1,2,...,n), (2,1,...,n), ..., (n, n-1, ..., 1) \}$ and so on. Then we can formulate LAP as
+The Linear Assignment Problem is a combinatorial optimization problem, where you want to find an optimial assignment between $n$ workers and $n$ tasks. Let $\{w_1, ..., w_n \}$ be the set of workers and let $\{ t_1, ..., t_n \}$ be the set of tasks. Let $c_{i,j}$ represent the cost of assigning $w_i \to t_j$ and let $\mathcal{A}$ be the set of sets of $n!$ permutations of $\{1, 2, ..., n\}$, for instance $\mathcal{A} = \{(1,2,...,n), (2,1,...,n), ..., (n, n-1, ..., 1) \}$ and so on. Then we can formulate LAP as
 
 $$
 \begin{align}
 
-\alpha^* = \underset{\alpha \in \mathcal{\Alpha}}{\arg\min} \sum_{i=1}^n c_{i,\alpha(i)}
+A^* = \underset{A \in \mathcal{A}}{\arg\min} \sum_{i=1}^n c_{i,A(i)}
 
 
 
 \end{align}
 $$
 
-where $\alpha^* \in \mathcal{\Alpha}$ is the optimal assignment, where $\alpha(i)_k$ represent the index of some task in $T$ assigned to worker $w_i$, where $k$ is the index of the permutation $\alpha_k \in \mathcal{\Alpha}$. It's also common to formulate it in terms of maximization, where let's say every worker produce a gain instead of a cost.
+where $A^* \in \mathcal{A}$ is the optimal assignment, where $A(i)_k$ represent the index of some task in $T$ assigned to worker $w_i$, where $k$ is the index of the permutation $A_k \in \mathcal{A}$. It's also common to formulate it in terms of maximization, where let's say every worker produce a gain instead of a cost.
 
 The motivation behind LAP is to find an algorithm that is significantly more efficient than $\mathcal{O}(n!)$, which would be the brute-force approach of testing every possible permutation of assignments.
 
